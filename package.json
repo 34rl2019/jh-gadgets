@@ -1,0 +1,8 @@
+{
+  "name": "business-cms",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": { "dev": "nodemon src/server.js", "start": "node src/server.js", "migrate": "knex migrate:latest", "seed": "knex seed:run", "lint": "eslint ." },
+  "dependencies": { "bcrypt": "^6.0.0", "compression": "^1.8.1", "cookie-parser": "^1.4.7", "cors": "^2.8.5", "dotenv": "^16.6.1", "ejs": "^3.1.10", "express": "^5.1.0", "express-rate-limit": "^8.0.1", "express-validator": "^7.2.1", "helmet": "^8.1.0", "jsonwebtoken": "^9.0.2", "knex": "^3.1.0", "morgan": "^1.10.0", "multer": "^2.0.1", "mysql2": "^3.14.1", "nodemailer": "^7.0.5", "sharp": "^0.34.3", "slugify": "^1.6.6" },
+  "devDependencies": { "eslint": "^9.31.0", "nodemon": "^3.1.10", "prettier": "^3.6.2" }
+}

@@ -1,0 +1,1 @@
+<%- include('partials/header') %><section class="container py-5"><h1>Services</h1><div class="row g-4"><% services.forEach(s=>{ %><div class="col-md-4"><article class="card h-100"><div class="card-body"><h2 class="h4"><%= s.title %></h2><p><%= s.description %></p></div></article></div><% }) %></div></section><%- include('partials/footer') %>

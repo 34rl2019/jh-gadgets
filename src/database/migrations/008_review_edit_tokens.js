@@ -1,0 +1,2 @@
+exports.up = async knex => { if (!(await knex.schema.hasColumn('product_reviews', 'edit_token_hash'))) await knex.schema.alterTable('product_reviews', table => table.string('edit_token_hash', 64).nullable().unique()); };
+exports.down = async knex => { if (await knex.schema.hasColumn('product_reviews', 'edit_token_hash')) await knex.schema.alterTable('product_reviews', table => table.dropColumn('edit_token_hash')); };

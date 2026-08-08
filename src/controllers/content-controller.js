@@ -1,0 +1,3 @@
+const repo = require('../repositories/content-repository'); const { ok, created } = require('../helpers/api-response');
+const must = async (table, id) => { const row = await repo.find(table,id); if (!row) { const e = new Error('Record not found'); e.status=404; throw e; } return row; };
+exports.api = table => ({ list: async (req,res) => ok(res, await repo.list(table, req.query)), get: async (req,res) => ok(res, await must(table,req.params.id)), create: async (req,res) => created(res, await repo.create(table,req.body)), update: async (req,res) => ok(res, await (must(table,req.params.id), repo.update(table,req.params.id,req.body))), remove: async (req,res) => { await must(table,req.params.id); await repo.remove(table,req.params.id); res.status(204).end(); } });

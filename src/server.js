@@ -1,0 +1,1 @@
+const app = require('./app'); const db = require('./config/database'); const port = Number(process.env.PORT || 3000); db.raw('SELECT 1').then(()=>app.listen(port,()=>console.log(`CMS running at http://localhost:${port}`))).catch(err=>{console.error('Database connection failed:',err.message);process.exit(1);});
